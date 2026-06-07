@@ -1,0 +1,9 @@
+match:
+  - name: "example"
+    version: 1
+
+patch:
+  name: "foo"
+  version: 2
+  approved: true
+  score: 10.0

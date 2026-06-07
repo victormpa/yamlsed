@@ -1,0 +1,23 @@
+name: "example"
+version: 1
+description: "This is an example YAML file"
+author: "John Doe"
+license: "MIT"
+approved: false
+score: 9.8
+healthcheck: null
+tags:
+  - "yaml"
+  - "templates"
+  - "parser"
+labels:
+  operating_system: "linux"
+  architecture: "x86_64"
+  distribution: "ubuntu"
+  version: "20.04"
+dependencies:
+  - name: "example"
+    version: "1.0.0"
+    description: "This is an example YAML file"
+    author: "John Doe"
+    license: "MIT"

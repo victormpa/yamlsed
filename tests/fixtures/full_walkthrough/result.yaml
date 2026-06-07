@@ -1,0 +1,13 @@
+name: "foo"
+version: 2
+description: "This is an example YAML file"
+approved: true
+score: 10.0
+tags:
+  - "yaml"
+  - "added"
+labels:
+  operating_system: "linux"
+  architecture: "x86_64"
+  distribution: "ubuntu"
+  version: "20.04"

@@ -1,0 +1,6 @@
+match:
+  - name: "other"
+    version: 99
+
+patch:
+  description: "Should not apply"

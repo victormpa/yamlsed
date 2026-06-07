@@ -1,0 +1,6 @@
+match:
+  - name: "foo"
+
+patch:
+  children+:
+    - name: "baz"

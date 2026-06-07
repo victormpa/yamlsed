@@ -1,0 +1,4 @@
+name: "foo"
+version: 2
+approved: true
+score: 10.0

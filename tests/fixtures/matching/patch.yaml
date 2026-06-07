@@ -1,0 +1,6 @@
+match:
+  - name: "example"
+    version: 1
+
+patch:
+  description: "Matched via OR selector"

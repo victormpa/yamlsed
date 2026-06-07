@@ -1,0 +1,73 @@
+# Base example
+---
+name: "example"
+version: 1
+description: "This is an example YAML file"
+author: "John Doe"
+license: "MIT"
+approved: false
+score: 9.8
+healthcheck: null
+tags:
+  - "yaml"
+  - "templates"
+  - "parser"
+labels:
+  operating_system: "linux"
+  architecture: "x86_64"
+  distribution: "ubuntu"
+  version: "20.04"
+dependencies:
+  - name: "example"
+    version: "1.0.0"
+    description: "This is an example YAML file"
+    author: "John Doe"
+    license: "MIT"
+
+
+# Patch example
+---
+match:
+  - name: "example"
+    version: 1
+  - name: "example2"
+    version: 1
+
+patch:
+  # When a string, interger, float or boolean is specified, the entire value is replaced.
+  name: "foo" # Turns example -> foo
+  version: 2 # Turns 1 -> 2
+  approved: true # Turns false -> true
+  score: 10.0 # Turns 9.8 -> 10.0
+  
+  # When an array is specified, the entire array is replaced.
+  tags:
+    - "yaml"
+  
+  # To add to an array, suffix the key with a plus.
+  tags+:
+    - "added"
+
+  # To drop keys, suffix the key with a minus. 
+  
+  # If the value matches the subject, the key is deleted.
+  author-: "John Doe"
+
+  # If you want to delete regardless, match with *
+  license-: "*"
+
+  # If you want to delete when the value is null, match with null
+  healthcheck-: null
+  
+  # When the suject is an array, match with * as well
+  dependencies-: "*"
+
+  # IF you specify a key, the subject must *exactly* match the keys specified.
+  dependencies-:
+    - name: "example2"
+      version: 1
+
+  # When the key is suffixed with a question mark, the subject must *partially* match the keys specified.
+  dependencies-?:
+    - name: "example2"
+      version: 1

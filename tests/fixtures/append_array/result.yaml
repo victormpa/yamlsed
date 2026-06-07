@@ -1,0 +1,7 @@
+name: "example"
+version: 1
+tags:
+  - "yaml"
+  - "templates"
+  - "parser"
+  - "added"

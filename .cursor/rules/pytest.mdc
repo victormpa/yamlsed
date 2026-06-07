@@ -1,0 +1,79 @@
+---
+description: How to run and write pytest tests for yamly
+globs: tests/**
+alwaysApply: false
+---
+
+# Pytest
+
+## Running tests
+
+```bash
+make test
+```
+
+Equivalent:
+
+```bash
+poetry run pytest tests --cov=yamly --cov-report=term-missing
+```
+
+Run a single test file:
+
+```bash
+poetry run pytest tests/test_append_array.py
+```
+
+## Layout
+
+Each concept gets a test file and a matching fixture folder:
+
+```
+tests/
+  test_<concept>.py
+  fixtures/
+    <concept>/
+      base.yaml      # template to patch
+      patch.yaml     # match + patch document
+      result.yaml    # expected output
+      README.md      # what the example demonstrates
+```
+
+The fixture folder name must match the test file (e.g. `test_append_array.py` → `fixtures/append_array/`).
+
+## Test file template
+
+Follow this pattern for every new test:
+
+```python
+from pathlib import Path
+
+import pytest
+
+from yamly.patch import Patch
+from yamly.template import Template
+
+FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures" / "<concept>"
+
+
+@pytest.fixture
+def base() -> Template:
+    return Template.load(FIXTURES_DIR / "base.yaml")
+
+
+@pytest.fixture
+def patch() -> Patch:
+    return Patch.load(FIXTURES_DIR / "patch.yaml")
+
+
+def test_<concept>(base: Template, patch: Patch) -> None:
+    expected = Template.load(FIXTURES_DIR / "result.yaml")
+    base.apply(patch)
+    assert base.documents == expected.documents
+```
+
+## Adding a new test
+
+1. Create `tests/fixtures/<concept>/` with `base.yaml`, `patch.yaml`, `result.yaml`, and `README.md`.
+2. Create `tests/test_<concept>.py` using the template above.
+3. Run `make test` (or the single-file pytest command) to verify.

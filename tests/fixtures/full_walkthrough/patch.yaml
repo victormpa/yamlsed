@@ -1,0 +1,22 @@
+match:
+  - name: "example"
+    version: 1
+  - name: "example2"
+    version: 1
+
+patch:
+  name: "foo"
+  version: 2
+  approved: true
+  score: 10.0
+  tags:
+    - "yaml"
+  tags+:
+    - "added"
+  author-: "John Doe"
+  license-: "*"
+  healthcheck-: null
+  dependencies-: "*"
+  dependencies-?:
+    - name: "example2"
+      version: 1
