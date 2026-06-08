@@ -19,11 +19,11 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  # - Introduction: introduction.md
-  # - Installation: installation.md
-  # - Usage: usage.md
-  # - API: api.md
-  # - Examples: examples.md
-  # - FAQ: faq.md
-  # - Contributing: contributing.md
-  # - License: license.md
+  - Concepts: concepts.md
+  - Matching: matching.md
+  - Patching:
+    - Overview: patch-operations/index.md
+    - Scalars: patch-operations/scalars.md
+    - Arrays and objects: patch-operations/collections.md
+    - Functions: patch-operations/functions.md
+  - Examples: examples.md

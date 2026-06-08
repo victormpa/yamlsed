@@ -1,5 +1,7 @@
 
 
+.PHONY: lint test docs
+
 lint:
 	isort yamlsed tests
 	black yamlsed tests
@@ -7,3 +9,6 @@ lint:
 
 test:
 	poetry run pytest tests --cov=yamlsed --cov-report=term-missing
+
+docs:
+	poetry run mkdocs serve
