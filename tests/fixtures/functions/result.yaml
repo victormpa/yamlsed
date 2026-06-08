@@ -1,0 +1,17 @@
+name: "example"
+version: 1
+updated: "2026-01-01 12:00:00"
+random: 42
+uppercase: "HELLO"
+lowercase: "hello"
+capitalize: "Hello"
+reverse: "olleh"
+length: 5
+substring: "hel"
+replace: "hewwo"
+split:
+  - "hello"
+  - "world"
+join: "hello,world"
+trim: "hello"
+env: "/tmp/home"

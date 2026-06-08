@@ -5,7 +5,7 @@ Each folder demonstrates one Yamly concept with four files:
 | File | Purpose |
 | ---- | ------- |
 | `base.yaml` | The template to patch |
-| `patch.yaml` | `match` + `patch` document |
+| `{name}.patch.yaml` | `match` + `patch` document (named after the example) |
 | `result.yaml` | Expected output after applying the patch |
 | `README.md` | What the example shows |
 

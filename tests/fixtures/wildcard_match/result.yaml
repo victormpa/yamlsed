@@ -1,0 +1,6 @@
+name: "example"
+version: 1
+labels:
+  os: linux
+  env: prod
+description: "Matched via wildcard"

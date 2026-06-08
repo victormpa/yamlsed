@@ -1,0 +1,8 @@
+match:
+  - name: "example"
+
+patch:
+  metadata:
+    nested:
+      tags+:
+        - templates

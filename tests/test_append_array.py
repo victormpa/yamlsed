@@ -15,7 +15,7 @@ def base() -> Template:
 
 @pytest.fixture
 def patch() -> Patch:
-    return Patch.load(FIXTURES_DIR / "patch.yaml")
+    return Patch.load(FIXTURES_DIR / f"{FIXTURES_DIR.name}.patch.yaml")
 
 
 def test_append_array(base: Template, patch: Patch) -> None:

@@ -1,0 +1,8 @@
+name: "example"
+items:
+  - type: a
+  - tags:
+      - new-tag
+  - type: b
+    name: new-item
+  - plain-entry

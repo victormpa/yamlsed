@@ -1,0 +1,24 @@
+from pathlib import Path
+
+import pytest
+
+from yamly.patch import Patch
+from yamly.template import Template
+
+FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures" / "append_object_missing"
+
+
+@pytest.fixture
+def base() -> Template:
+    return Template.load(FIXTURES_DIR / "base.yaml")
+
+
+@pytest.fixture
+def patch() -> Patch:
+    return Patch.load(FIXTURES_DIR / f"{FIXTURES_DIR.name}.patch.yaml")
+
+
+def test_append_object_missing(base: Template, patch: Patch) -> None:
+    expected = Template.load(FIXTURES_DIR / "result.yaml")
+    base.apply(patch)
+    assert base.documents == expected.documents

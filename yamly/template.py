@@ -8,15 +8,19 @@ import yaml
 from yamly.patch import Patch
 
 
-class Template:
+class Template(list):
     """A YAML template backed by one or more parsed documents."""
 
     def __init__(self, documents: list[Any] | None = None) -> None:
-        self.documents: list[Any] = list(documents) if documents is not None else []
+        super().__init__(documents or [])
+
+    @property
+    def documents(self) -> list[Any]:
+        return self
 
     def __str__(self) -> str:
         """Return a string representation of the template."""
-        return yaml.dump(self.documents, sort_keys=False)
+        return yaml.dump(list(self), sort_keys=False)
 
     @classmethod
     def load(cls, path: str | Path) -> Template:
@@ -29,7 +33,7 @@ class Template:
         """Write this template's documents to a YAML file."""
         with Path(path).open("w", encoding="utf-8") as stream:
             yaml.safe_dump_all(
-                self.documents,
+                list(self),
                 stream,
                 sort_keys=False,
                 default_flow_style=False,
@@ -38,8 +42,10 @@ class Template:
 
     def apply(self, patch: Patch) -> Template:
         """Apply a patch to the template."""
-        for i, document in enumerate(self.documents):
-            if patch.matches(document):
-                self.documents[i] = patch.apply(document)
+        for patch_doc in patch:
+            fragment = Patch(patch_doc)
+            for i, document in enumerate(self.documents):
+                if fragment.matches(document):
+                    self.documents[i] = fragment.eval(document)
 
         return self

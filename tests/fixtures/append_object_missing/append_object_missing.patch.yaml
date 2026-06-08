@@ -1,0 +1,6 @@
+match:
+  - name: "foo"
+
+patch:
+  labels+:
+    environment: "production"

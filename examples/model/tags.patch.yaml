@@ -1,0 +1,11 @@
+match:
+  - name: "Example.*?"
+
+patch:
+  name: {{old().split(' ').join('-').upper()}}
+  tags:
+    - "example"
+    - "model"
+    - "yaml"
+    - "templates"
+    - "parser"

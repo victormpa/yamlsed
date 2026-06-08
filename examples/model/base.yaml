@@ -1,0 +1,19 @@
+name: Example model
+
+schedule:
+  seconds: 10
+
+model:
+  class: lib.example.Example
+
+interfaces:
+  - name: database1
+    type: database
+    config:
+      host: 192.168.1.100
+      port: 4800
+  - name: database2
+    type: database
+    config:
+      host: 192.168.1.100
+      port: 4800

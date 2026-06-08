@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from yamly.patch import Patch
+from yamly.selector import Selector
 from yamly.template import Template
 
 FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures" / "append_array"
@@ -21,12 +22,13 @@ def test_template_save_roundtrip(tmp_path: Path) -> None:
 
 
 def test_patch_str() -> None:
-    patch = Patch.load(FIXTURES_DIR / "patch.yaml")
+    patch = Patch.load(FIXTURES_DIR / f"{FIXTURES_DIR.name}.patch.yaml")
     rendered = str(patch)
     assert "match" in rendered
 
 
 def test_patch_match_property() -> None:
-    patch = Patch.load(FIXTURES_DIR / "patch.yaml")
+    patch = Patch.load(FIXTURES_DIR / f"{FIXTURES_DIR.name}.patch.yaml")
     assert isinstance(patch.match, list)
-    assert patch.match[0]["name"] == "example"
+    assert isinstance(patch.match[0], Selector)
+    assert patch.match[0].query["name"] == "example"

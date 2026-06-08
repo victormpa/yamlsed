@@ -1,0 +1,10 @@
+match:
+  - name: "example"
+
+patch:
+  items:
+    - tags+:
+        - new-tag
+    - type: b
+      name: new-item
+    - plain-entry

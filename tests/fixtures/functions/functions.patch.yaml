@@ -1,0 +1,18 @@
+match:
+  - name: "example"
+    version: 1
+
+patch:
+  updated: "{{now('YYYY-MM-DD HH:mm:ss')}}"
+  random: {{random(1, 100)}}
+  uppercase: {{uppercase("hello")}}
+  lowercase: {{lowercase("HELLO")}}
+  capitalize: {{capitalize("hello")}}
+  reverse: {{reverse("hello")}}
+  length: {{length("hello")}}
+  substring: {{substring("hello", 0, 3)}}
+  replace: {{replace("hello", "l", "w")}}
+  split: {{split("hello,world", ",")}}
+  join: {{join(["hello", "world"], ",")}}
+  trim: {{trim(" hello ")}}
+  env: {{env("HOME")}}

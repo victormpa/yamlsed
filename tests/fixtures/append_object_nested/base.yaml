@@ -1,0 +1,18 @@
+name: Example model
+
+interfaces:
+  - name: kepware server 1
+    type: kepware
+    config:
+      host: 192.168.1.100
+      port: 4800
+  - name: kepware server 2
+    type: kepware
+    config:
+      host: 192.168.1.101
+      port: 4801
+  - name: database server
+    type: database
+    config:
+      host: db.example.com
+      port: 5432

@@ -1,0 +1,13 @@
+match:
+  - name: "example"
+    version: 1
+
+patch:
+  approved: true
+---
+match:
+  - name: "example"
+    version: 1
+
+patch:
+  version: 2

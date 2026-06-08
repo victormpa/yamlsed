@@ -1,0 +1,10 @@
+match:
+  - name: Example model
+
+patch:
+  secret: true
+  interfaces:
+    - type: kepware
+      config+:
+        username: admin
+        password: password

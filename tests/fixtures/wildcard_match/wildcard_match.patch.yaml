@@ -1,0 +1,7 @@
+match:
+  - name: "example"
+    labels:
+      os: "*"
+
+patch:
+  description: "Matched via wildcard"
