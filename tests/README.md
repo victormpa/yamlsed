@@ -1,6 +1,6 @@
-# Examples
+# Testing suite
 
-Each folder demonstrates one Yamlsed concept with four files:
+Each folder demonstrates one concept with four files:
 
 | File | Purpose |
 | ---- | ------- |
@@ -9,7 +9,7 @@ Each folder demonstrates one Yamlsed concept with four files:
 | `result.yaml` | Expected output after applying the patch |
 | `README.md` | What the example shows |
 
-The original combined reference is still at [github.com/victormpa/yamlsed/blob/main/tests/fixtures/base.yaml](https://github.com/victormpa/yamlsed/blob/main/tests/fixtures/base.yaml).
+The original combined reference is still at [tests/fixtures/base.yaml](https://github.com/victormpa/yamlsed/blob/main/tests/fixtures/base.yaml).
 
 ## Catalog
 
