@@ -7,8 +7,8 @@ from typing import Any
 
 import yaml
 
-from yamly.functions import eval_expression, expression_context, is_expression
-from yamly.selector import WILDCARD, Selector
+from yamlsed.functions import eval_expression, expression_context, is_expression
+from yamlsed.selector import WILDCARD, Selector
 
 PATCH_SUFFIX = ".patch.yaml"
 _BARE_EXPRESSION_PATTERN = re.compile(

@@ -1,7 +1,7 @@
 import os
 
-from yamly.patch import Patch
-from yamly.template import Template
+from yamlsed.patch import Patch
+from yamlsed.template import Template
 
 PATCH_SUFFIX = ".patch.yaml"
 

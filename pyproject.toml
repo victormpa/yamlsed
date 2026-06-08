@@ -1,5 +1,5 @@
 [project]
-name = "yamly"
+name = "yamlsed"
 version = "0.1.0"
 description = ""
 authors = [{ name = "victormpa", email = "victor.martins.dpaula@gmail.com" }]

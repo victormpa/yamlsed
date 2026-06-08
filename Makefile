@@ -1,9 +1,9 @@
 
 
 lint:
-	isort yamly tests
-	black yamly tests
-	flake8 yamly tests
+	isort yamlsed tests
+	black yamlsed tests
+	flake8 yamlsed tests
 
 test:
-	poetry run pytest tests --cov=yamly --cov-report=term-missing
+	poetry run pytest tests --cov=yamlsed --cov-report=term-missing

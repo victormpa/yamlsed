@@ -1,8 +1,8 @@
 from pathlib import Path
 
-from yamly.patch import Patch
-from yamly.selector import Selector
-from yamly.template import Template
+from yamlsed.patch import Patch
+from yamlsed.selector import Selector
+from yamlsed.template import Template
 
 FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures" / "append_array"
 

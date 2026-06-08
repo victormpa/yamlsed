@@ -1,5 +1,5 @@
 ---
-description: How to run and write pytest tests for yamly
+description: How to run and write pytest tests for yamlsed
 globs: tests/**
 alwaysApply: false
 ---
@@ -15,7 +15,7 @@ make test
 Equivalent:
 
 ```bash
-poetry run pytest tests --cov=yamly --cov-report=term-missing
+poetry run pytest tests --cov=yamlsed --cov-report=term-missing
 ```
 
 Run a single test file:
@@ -50,8 +50,8 @@ from pathlib import Path
 
 import pytest
 
-from yamly.patch import Patch
-from yamly.template import Template
+from yamlsed.patch import Patch
+from yamlsed.template import Template
 
 FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures" / "<concept>"
 

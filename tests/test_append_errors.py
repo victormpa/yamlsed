@@ -1,6 +1,6 @@
 import pytest
 
-from yamly.patch import Patch
+from yamlsed.patch import Patch
 
 
 def test_append_to_non_array_field_raises() -> None:

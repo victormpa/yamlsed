@@ -1,6 +1,6 @@
 import pytest
 
-from yamly.patch import Patch
+from yamlsed.patch import Patch
 
 
 def test_delete_exact_skips_non_dict_elements() -> None:

@@ -5,7 +5,7 @@ from typing import Any
 
 import yaml
 
-from yamly.patch import Patch
+from yamlsed.patch import Patch
 
 
 class Template(list):

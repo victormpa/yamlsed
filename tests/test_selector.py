@@ -1,6 +1,6 @@
 import pytest
 
-from yamly.selector import Selector
+from yamlsed.selector import Selector
 
 
 def test_eval_matches_string_literal() -> None:

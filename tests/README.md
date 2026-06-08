@@ -1,6 +1,6 @@
 # Examples
 
-Each folder demonstrates one Yamly concept with four files:
+Each folder demonstrates one Yamlsed concept with four files:
 
 | File | Purpose |
 | ---- | ------- |

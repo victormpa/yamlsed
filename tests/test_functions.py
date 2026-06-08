@@ -2,9 +2,9 @@ from pathlib import Path
 
 import pytest
 
-from yamly.functions import _eval_expression, _format_now, eval_expression, expression_context, is_expression
-from yamly.patch import Patch
-from yamly.template import Template
+from yamlsed.functions import _eval_expression, _format_now, eval_expression, expression_context, is_expression
+from yamlsed.patch import Patch
+from yamlsed.template import Template
 
 FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures" / "functions"
 
@@ -21,8 +21,8 @@ def patch() -> Patch:
 
 @pytest.fixture
 def mock_functions(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setattr("yamly.functions._format_now", lambda fmt: "2026-01-01 12:00:00")
-    monkeypatch.setattr("yamly.functions.random.randint", lambda minimum, maximum: 42)
+    monkeypatch.setattr("yamlsed.functions._format_now", lambda fmt: "2026-01-01 12:00:00")
+    monkeypatch.setattr("yamlsed.functions.random.randint", lambda minimum, maximum: 42)
     monkeypatch.setenv("HOME", "/tmp/home")
 
 
@@ -114,7 +114,7 @@ def test_eval_expression_rejects_unsupported_argument_type() -> None:
 
 def test_eval_env_missing_variable() -> None:
     with pytest.raises(KeyError):
-        eval_expression('{{env("YAMLY_MISSING_ENV_VAR")}}')
+        eval_expression('{{env("YAMLSED_MISSING_ENV_VAR")}}')
 
 
 def test_patch_requires_document() -> None:

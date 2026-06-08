@@ -2,9 +2,9 @@ from pathlib import Path
 
 import pytest
 
-from yamly.discover import discover
-from yamly.patch import Patch
-from yamly.template import Template
+from yamlsed.discover import discover
+from yamlsed.patch import Patch
+from yamlsed.template import Template
 
 
 @pytest.fixture

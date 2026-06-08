@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pytest
 
-from yamly.patch import Patch
+from yamlsed.patch import Patch
 
 
 def test_patch_rejects_missing_match_key() -> None:

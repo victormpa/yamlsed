@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
-from yamly.patch import Patch
-from yamly.template import Template
+from yamlsed.patch import Patch
+from yamlsed.template import Template
 
 FIXTURES_DIR = Path(__file__).resolve().parent / "fixtures" / "merge_nested_append"
 
