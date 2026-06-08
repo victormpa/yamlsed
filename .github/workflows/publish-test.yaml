@@ -1,9 +1,9 @@
-name: Publish Python Package
+name: Publish Python Package to TestPyPI
 
 on:
   push:
     branches:
-      - main
+      - dev
     # tags:
     #   - "v*.*.*"
 
@@ -36,11 +36,11 @@ jobs:
           path: dist/
 
   publish:
-    name: Publish to PyPI
+    name: Publish to TestPyPI
     needs:
       - build
     runs-on: ubuntu-latest
-    environment: pypi
+    environment: testpypi
     permissions:
       id-token: write
 
@@ -50,5 +50,7 @@ jobs:
         with:
           name: python-package-distributions
           path: dist/
-      - name: Publish distribution to PyPI
+      - name: Publish distribution to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
