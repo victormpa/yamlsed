@@ -22,14 +22,13 @@ jobs:
       - name: Run tests with coverage
         run: |
           printf '# Tests\n\n' > docs/tests.md
+          cat tests/README.md >> docs/tests.md
           poetry run pytest tests \
             --cov=yamlsed \
             --cov-report=term-missing \
-            --cov-report=markdown:/tmp/coverage.md \
             > /tmp/pytest-output.txt 2>&1
           printf '## Test run\n\n```text\n' >> docs/tests.md
           cat /tmp/pytest-output.txt >> docs/tests.md
           printf '\n```\n\n' >> docs/tests.md
-          cat /tmp/coverage.md >> docs/tests.md
       - name: Deploy docs
         run: poetry run mkdocs gh-deploy --force --no-history
