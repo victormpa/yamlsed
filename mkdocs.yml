@@ -1,0 +1,29 @@
+site_name: yamlsed
+repo_url: https://github.com/victormpa/yamlsed
+repo_name: victormpa/yamlsed
+
+theme:
+  name: material
+  features:
+    - navigation.instant   # the "Initializing search" SPA behavior
+    - navigation.top
+    - search.suggest
+    - content.code.copy    # copy button on code blocks
+
+markdown_extensions:
+  - pymdownx.highlight      # syntax-highlighted code blocks
+  - pymdownx.superfences
+  - admonition
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  # - Introduction: introduction.md
+  # - Installation: installation.md
+  # - Usage: usage.md
+  # - API: api.md
+  # - Examples: examples.md
+  # - FAQ: faq.md
+  # - Contributing: contributing.md
+  # - License: license.md
