@@ -18,6 +18,7 @@ The original combined reference is still at [fixtures/base.yaml](fixtures/base.y
 | [matching](fixtures/matching/) | OR selectors | [Matching](../README.md#matching) |
 | [replace_scalar](fixtures/replace_scalar/) | Replace scalar | [Replace (no suffix)](../README.md#replace-no-suffix) |
 | [replace_array](fixtures/replace_array/) | Replace array | [Replace (no suffix)](../README.md#replace-no-suffix) |
+| [replace_object](fixtures/replace_object/) | Replace object | [Replace (no suffix)](../README.md#replace-no-suffix) |
 | [append_array](fixtures/append_array/) | Append to array (`+`) | [Append to array](../README.md#append-to-array--key) |
 | [append_missing_array](fixtures/append_missing_array/) | Append to missing array (`+`) | [Append to array](../README.md#append-to-array--key) |
 | [delete_value_guarded](fixtures/delete_value_guarded/) | Value-guarded delete | [Delete](../README.md#delete--key-) |

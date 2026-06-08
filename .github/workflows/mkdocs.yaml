@@ -20,15 +20,6 @@ jobs:
       - name: Install dev dependencies
         run: poetry install --with dev
       - name: Run tests with coverage
-        run: |
-          printf '# Tests\n\n' > docs/tests.md
-          cat tests/README.md >> docs/tests.md
-          poetry run pytest tests \
-            --cov=yamlsed \
-            --cov-report=term-missing \
-            > /tmp/pytest-output.txt 2>&1
-          printf '## Test run\n\n```text\n' >> docs/tests.md
-          cat /tmp/pytest-output.txt >> docs/tests.md
-          printf '\n```\n\n' >> docs/tests.md
+        run: poetry run pytest tests --cov=yamlsed --cov-report=term-missing
       - name: Deploy docs
         run: poetry run mkdocs gh-deploy --force --no-history

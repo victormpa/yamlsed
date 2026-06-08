@@ -1,0 +1,7 @@
+match:
+  - name: "example"
+    version: 1
+
+patch:
+  labels:
+    environment: "production"
